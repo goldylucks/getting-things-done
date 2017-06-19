@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+  - "6.10.2"
+services:
+  - mongodb
+script: yarn lint && yarn flow && yarn ut && yarn prod:build
+branches:
+  only:
+  - master
+cache:
+  directories:
+  - node_modules
+
+deploy:
+  - provider: heroku
+    app: keychn
+    api_key:
+      secure: kMlvtrFTX4isZuesvXdzaArR4CRAVBYFCgHyIqffo8wQzhOY7/9oA0IjW5sIjWxQWkNNdE9Xf610U1m+i0hJuK7fEo3pL+2GCJAc6paxrVfC6g4Z6t2SwVZTPltLJuaOAPfaydLzmpOnYah/4flM63KWB/47S/JZkVj/85XgepvNlchDMSB7hgtUAH+SWIU9XldylbNGf3H7Q+NKvpqcxreRtVDocYgY5d5gyFgxTEraGA5UM8jEvAeqRwJ1zNE+YZUhvX25T8F3Hs2gCEmod2IYin6bkSoDjkygnwOqMQ4KBrJsdWgEcJuQhGOkQ04N5qCKTYx8JKL8JeVL8ZmX8tan4o/i9Vo7dWWeC9oa46j7eSsbS8VG/Q+qQGxkHfAf9BqUA2yi/+h0GDmJxM91Iv0lwVGx6wOICkeUauMq1GlVnNrDBNZmkuekjYhHOWZqX9ZwQjZapWuAZxXNdyKEVmQfqszPFzxhGDWCVK9KqsQ1bVNc+5qypj+e/B1zwbAyx4d6nfoPBBAr85zbajTuw9PZ5YIZtfKWnlkqMJ8+Nsbp7y2NkoIqkI+yQQCa9q66IEJeVR76ckaY5e+sg33ig9qRVmRgsLStq7VV0bMKys2sdg+BsC35AT9bz8XaDNnYUPzt8fDDeVuf4f0829t2I0xYD7peMgF9s/A8MCrpO0U=

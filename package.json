@@ -1,0 +1,88 @@
+{
+  "scripts": {
+    "start": "yarn dev:start",
+    "dev:wds": "webpack-dev-server --progress",
+    "dev:start": "nodemon src/server/server -e js,jsx  --exec babel-node --ignore lib --ignore dist --ignore client --ignore shared",
+    "prod:build": "yarn rimraf lib dist && babel src -d lib --ignore .test.js && cross-env NODE_ENV=production webpack -p --progress",
+    "prod:start": "cross-env NODE_ENV=production node lib/server",
+    "heroku-postbuild": "yarn prod:build",
+    "lint": "eslint 'src/**/*.{js,jsx}' webpack.config.babel.js",
+    "lint-staged": "lint-staged"
+  },
+  "git": {
+    "scripts": {
+      "pre-commit": "yarn lint-staged && yarn flow",
+      "pre-push": "yarn lint && yarn ut && yarn prod:build"
+    }
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "./test/jestSetup"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx}": "eslint",
+    "webpack.config.babel.js": "eslint"
+  },
+  "engines": {
+    "node": "6.10.2",
+    "npm": "3.10.10",
+    "yarn": "0.24.6"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-core": "^6.24.0",
+    "babel-eslint": "^7.1.1",
+    "babel-jest": "^20.0.3",
+    "babel-loader": "^7.0.0",
+    "babel-plugin-flow-react-proptypes": "^2.2.1",
+    "babel-preset-env": "^1.2.2",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-react": "^6.23.0",
+    "babel-preset-stage-0": "^6.22.0",
+    "cross-env": "^5.0.0",
+    "eslint": "^3.17.1",
+    "eslint-config-airbnb": "^15.0.1",
+    "eslint-plugin-flowtype": "^2.30.3",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^5.0.3",
+    "eslint-plugin-react": "^7.0.1",
+    "flow-bin": "^0.46.0",
+    "git-scripts": "^0.2.1",
+    "jest": "^20.0.3",
+    "lint-staged": "^3.4.0",
+    "nodemon": "^1.11.0",
+    "rimraf": "^2.6.1",
+    "supertest": "^3.0.0",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.2"
+  },
+  "dependencies": {
+    "axios": "^0.16.1",
+    "body-parser": "^1.17.1",
+    "colors": "^1.1.2",
+    "compression": "^1.6.2",
+    "cors": "^2.8.1",
+    "custom-error-generator": "^7.0.0",
+    "deasync": "^0.1.9",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.2",
+    "express-jwt": "^5.1.0",
+    "jsonwebtoken": "^7.3.0",
+    "mongoose": "^4.9.1",
+    "mongoose-type-email": "^1.0.3",
+    "mongoose-unique-validator": "^1.0.4",
+    "morgan": "^1.8.1",
+    "prop-types": "^15.5.10",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-helmet": "^5.1.3",
+    "react-hot-loader": "next",
+    "react-redux": "^5.0.3",
+    "react-router": "^4.1.1",
+    "react-router-dom": "^4.1.1",
+    "redux": "^3.6.0",
+    "redux-actions": "^2.0.1",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.2.0",
+    "serve-favicon": "^2.4.2"
+  }
+}
