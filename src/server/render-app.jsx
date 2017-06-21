@@ -40,6 +40,7 @@ const renderApp = ({ location, userAgent }: args) => {
         ${head.meta}
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
         <link rel="stylesheet" href="${STATIC_PATH}/css/main.css">
+        <link rel="stylesheet" href="${STATIC_PATH}/css/font-awesome.min.css">
       </head>
       <body>
         <div class="${APP_CONTAINER_CLASS}">${appHtml}</div>
