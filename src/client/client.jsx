@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
 import { AppContainer } from 'react-hot-loader'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 
 import { APP_SELECTOR } from '../shared/config'
 import App from '../shared/App'
@@ -15,9 +16,11 @@ const render = (AppComponent, reduxStore) => {
   ReactDOM.render(
     <Provider store={reduxStore}>
       <BrowserRouter>
-        <AppContainer>
-          <AppComponent />
-        </AppContainer>
+        <MuiThemeProvider>
+          <AppContainer>
+            <AppComponent />
+          </AppContainer>
+        </MuiThemeProvider>
       </BrowserRouter>
     </Provider>,
     document.querySelector(APP_SELECTOR),
