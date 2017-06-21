@@ -5,6 +5,7 @@ import Helmet from 'react-helmet'
 import injectTapEventPlugin from 'react-tap-event-plugin'
 
 import { APP_NAME } from './config'
+import Sidebar from './Sidebar'
 
 // Needed for onTouchTap
 // Required by material-ui
@@ -14,7 +15,9 @@ injectTapEventPlugin()
 const App = () => (
   <div className="main-container site">
     <Helmet titleTemplate={`%s | ${APP_NAME}`} defaultTitle={APP_NAME} />
-    <h1>Welcome to the app!</h1>
+    <div>
+      <Sidebar />
+    </div>
   </div>
 )
 
