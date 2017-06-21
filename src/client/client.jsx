@@ -15,13 +15,13 @@ import store from './clientStore'
 const render = (AppComponent, reduxStore) => {
   ReactDOM.render(
     <Provider store={reduxStore}>
-      <BrowserRouter>
-        <MuiThemeProvider>
+      <MuiThemeProvider>
+        <BrowserRouter>
           <AppContainer>
             <AppComponent />
           </AppContainer>
-        </MuiThemeProvider>
-      </BrowserRouter>
+        </BrowserRouter>
+      </MuiThemeProvider>
     </Provider>,
     document.querySelector(APP_SELECTOR),
   )

@@ -23,16 +23,15 @@ const renderApp = ({ location, userAgent }: args) => {
   const muiTheme = getMuiTheme({ userAgent })
   const store = initStore()
   const appHtml = ReactDOMServer.renderToString(
-    <MuiThemeProvider muiTheme={muiTheme}>
-      <Provider store={store}>
+    <Provider store={store}>
+      <MuiThemeProvider muiTheme={muiTheme}>
         <StaticRouter location={location} context={{}}>
           <App />
         </StaticRouter>
-      </Provider>
-    </MuiThemeProvider>,
+      </MuiThemeProvider>
+    </Provider>,
   )
   const head = Helmet.rewind()
-
   return (
     `<!doctype html>
     <html>
@@ -40,6 +39,7 @@ const renderApp = ({ location, userAgent }: args) => {
         ${head.title}
         ${head.meta}
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+        <link rel="stylesheet" href="${STATIC_PATH}/css/main.css">
       </head>
       <body>
         <div class="${APP_CONTAINER_CLASS}">${appHtml}</div>
