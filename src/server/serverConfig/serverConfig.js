@@ -6,6 +6,7 @@ const config = {
   jwtSecret: process.env.JWT_SECRET || 'JWT_SECRET',
   sysPassword: process.env.SYS_PASSWORD || 'SYS_PASSWORD',
   env: process.env.NODE_ENV || 'development',
+  port: process.env.PORT || '8000',
 }
 
 // jest sets NODE_ENV to test automatically. This normalises the .env to require the right file name
