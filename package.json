@@ -12,7 +12,7 @@
   "git": {
     "scripts": {
       "pre-commit": "yarn lint-staged && yarn flow",
-      "pre-push": "yarn lint && yarn ut && yarn prod:build"
+      "pre-push": "yarn lint && yarn prod:build"
     }
   },
   "jest": {
