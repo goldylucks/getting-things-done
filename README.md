@@ -18,6 +18,7 @@ $ git clone git@github.com:YOUR_GIATHUB_USERNAME/getting-things-done.git
 $ cd getting-things-done
 $ yarn install
 $ yarn run server #starts node server, seeds database, serves files at port 8000
+# on another terminal
 $ yarn start # starts webpack dev serverv on port 7000
 ```
 open your favorite browser and hack away!
