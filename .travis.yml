@@ -13,6 +13,6 @@ cache:
 
 deploy:
   - provider: heroku
-    app: gettings-things-done-app
+    app: getting-things-done-app
     api_key:
       secure: l9hlLcPHvh4B4pOqRfmZ+PC0xjygr75bP64XKAw9XKZ3rS95IG2Cx9PpnmHVK7R4J3QZ7+Qvh05IAlBk3i7TQheiF7O3MblLWg32fMmxysxTQtaTZzKCwTlYz+9Efvbxt2MswpRFQT4IHn3q8V1UhRVqweOdBkyLKGooSU/tYPitz6IK2DxxCO+Css6w2XiRcXCoKvSmlrxiMsinFH9lqP6nNOpz8HBsskc6StLrJ20Bf7BJziuSQAfEdj9EUIaOTO7LVHk76eIsnASUTMglN7wqD6vk5WelpWNsrpcj6xgz7c8oqFMjmDpjn6yyU5VTpTU+TmcGVofCV+2GJEJ2ZMBhLGatVUp3aCdW8uicPSwj1iCEXPoquBrdgB/SBILSMgiVx8YQkkv0ILZ2sF1iXdf6XaNTXH+wJ80xdHA1+9sR0Qb8/ESiv+0he4T4zGKO4w/mcGNu7nj8ySus+tK++UtIKX2uRIhKycai9C/JC5VvRz9qp8LN/zfsoB61YfAfuo3mVp2MOxVWFMaporON79K8/yA7auY8EridkOQ0sBtJ8QwTin6C7I/zMni1+pEMlYJ5jdhhWLvLee0x7eJChippasC0xBTj93LtADOfG5TCy1aQwNVVrfcv/hiDgKGqh6MdAk4qpYROrckuvN1zJldnQ2pw67NBWnMiMCmFeRo=
