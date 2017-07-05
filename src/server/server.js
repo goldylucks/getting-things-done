@@ -28,12 +28,9 @@ pageRouter(app)
 app.use(middlewares.error)
 app.use(middlewares.notFound)
 
-// avoid crash on test watch mode
-if (!module.parent) {
-  app.listen(serverConfig.port, () => {
-    serverLogger.log(`Server listening on ${serverConfig.port} ${serverConfig.env}`)
-    serverLogger.log('Keep "yarn dev:wds" running in another terminal')
-  })
-}
+app.listen(serverConfig.port, () => {
+  serverLogger.log(`Server listening on ${serverConfig.port} ${serverConfig.env}`)
+  serverLogger.log('Keep "yarn dev:wds" running in another terminal')
+})
 
 export default app // for testing
